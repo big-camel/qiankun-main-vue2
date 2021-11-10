@@ -21,7 +21,9 @@ export default {
       handler(newValue, oldValue) {
         if(!this.microApp) return
         this.microApp.update({
-          props: newValue
+          props: {
+            title: newValue,
+          }
         })
         console.log('props', newValue, oldValue);
       },
