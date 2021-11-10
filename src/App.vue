@@ -1,13 +1,28 @@
 <template>
   <div id="app">
+    <micro-app name="header" :title="title" />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <input v-model="title" />
     <router-view />
   </div>
 </template>
-
+<script>
+import MicroApp from './MicroApp.vue'
+export default {
+  name: 'App',
+  data () {
+    return {
+      title: 'Welcome to Your Vue.js App'
+    }
+  },
+  components: {
+    MicroApp
+  }
+}
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
